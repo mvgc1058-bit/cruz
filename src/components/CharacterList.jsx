@@ -1,25 +1,23 @@
 import CharacterCard from "./CharacterCard";
 
-function CharacterList({
-  characters
-}) {
+function CharacterList({ characters }) {
 
-  return (
+    return (
 
-    <div className="grid">
+        <div className="grid">
 
-      {characters.map(character => (
+            {characters.map(character => (
 
-        <CharacterCard
-          key={character.id}
-          character={character}
-        />
+                <CharacterCard
+                    key={character.id}
+                    character={character}
+                />
 
-      ))}
+            ))}
 
-    </div>
+        </div>
 
-  );
+    );
 
 }
 

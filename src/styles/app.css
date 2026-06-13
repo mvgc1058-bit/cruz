@@ -1,87 +1,159 @@
-body{
-
-margin:0;
-font-family:Arial;
-background:#111;
-color:white;
-
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #111;
+    color: white;
 }
 
-.navbar{
+/* ===== NAVBAR ===== */
 
-display:flex;
-justify-content:space-between;
-padding:20px;
-background:#00b0cc;
-
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #00b0cc;
 }
 
-.navbar a{
-
-color:white;
-margin-left:20px;
-text-decoration:none;
-
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
 }
 
-.search{
+/* ===== BUSCADOR ===== */
 
-width:100%;
-padding:10px;
-margin:20px 0;
+.search {
+    display: block;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 12px;
 
+    background: #222;
+    color: white;
+
+    border: 2px solid #00b0cc;
+    border-radius: 10px;
+
+    font-size: 16px;
+    outline: none;
+
+    transition: all 0.3s ease;
 }
 
-.grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(
-auto-fit,
-minmax(250px,1fr)
-);
-
-gap:20px;
-
-padding:20px;
-
+.search:focus {
+    border-color: #00d4f5;
+    box-shadow: 0 0 15px rgba(0, 176, 204, 0.7);
 }
 
-.card{
-
-background:#222;
-
-padding:15px;
-
-border-radius:10px;
-
-text-align:center;
-
+.search::placeholder {
+    color: #bbb;
 }
 
-.card img{
+/* ===== FILTRO ===== */
 
-width:100%;
-border-radius:10px;
-
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-footer{
+.filter-container select {
+    width: 280px;
+    padding: 12px;
 
-padding:20px;
-text-align:center;
+    background: #222;
+    color: white;
 
+    border: 2px solid #00b0cc;
+    border-radius: 10px;
+
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+
+    transition: all 0.3s ease;
 }
 
-@media(max-width:768px){
-
-.navbar{
-
-flex-direction:column;
-
-align-items:center;
-
+.filter-container select:hover {
+    border-color: #00d4f5;
+    box-shadow: 0 0 10px rgba(0, 176, 204, 0.5);
 }
 
+.filter-container select:focus {
+    border-color: #00d4f5;
+    box-shadow: 0 0 15px rgba(0, 176, 204, 0.7);
+}
+
+.filter-container option {
+    background: #222;
+    color: white;
+}
+
+/* ===== GRID DE POKÉMON ===== */
+
+.grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding: 20px;
+}
+
+/* ===== TARJETAS ===== */
+
+.card {
+    background: #222;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    border: 2px solid #00b0cc;
+
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 0 20px rgba(0, 176, 204, 0.6);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* ===== FOOTER ===== */
+
+footer {
+    padding: 20px;
+    text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search {
+        width: 90%;
+    }
+
+    .filter-container select {
+        width: 90%;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
 }
